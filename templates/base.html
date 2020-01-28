@@ -1,5 +1,5 @@
 <!doctype html>
-{% load static %}
+{% load staticfiles %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,23 +9,24 @@
     <title>Social</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{% static '../static/css/master.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '' %}">
 
 </head>
 <body>
-<nav class="navbar mynav" role="navigation" id="navbar">
+<nav class=" navbar navbar-expand-sm bg-primary  mynav " role="navigation" id="navbar">
     <div class="container">
-        <a class="navbar-brand mynav" href="{% url 'home' %}">Star Social</a>
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="nav  justify-content-end nav-pills   ">
+            <a class=" mynav navbar-brand text-white " href="{% url 'home' %}">Star Social</a>
             {% if user.is_authenticated %}
-                <li><a href="#">Post</a></li>
-                <li><a href="#">Groups</a></li>
-                <li><a href="#"></a>Create Group</li>
-                <li><a href="{% url 'accounts:logout' %}">Log Out</a></li>
+                <li class="nav-item "><a class="nav-link text-white " href="{% url 'posts:create' %}">Post</a></li>
+                <li class="nav-item"><a class="nav-link text-white " href="{% url 'groups:all' %}">Groups</a></li>
+                <li class="nav-item"><a class="nav-link text-white " href="{% url 'groups:create' %}"></a>Create Group
+                </li>
+                <li class="nav-item"><a class="nav-link text-white " href="{% url 'accounts:logout' %}">Log Out</a></li>
             {% else %}
-                <li><a href="#">Groups</a></li>
-                <li><a href="{% url 'accounts:login' %}">Log in</a></li>
-                <li><a href="{% url 'accounts:signup' %}">Sign Up</a></li>
+                <li class="nav-item"><a class="nav-link text-white " href="{% url 'groups:all' %}">Groups</a></li>
+                <li class="nav-item"><a class="nav-link text-white " href="{% url 'accounts:login' %}">Log in</a></li>
+                <li class="nav-item"><a class="nav-link text-white " href="{% url 'accounts:signup' %}">Sign Up</a></li>
             {% endif %}
         </ul>
     </div>
