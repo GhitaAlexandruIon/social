@@ -80,13 +80,8 @@ WSGI_APPLICATION = 'social.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'social$groups',
-        'USER': 'social',
-        'PASSWORD': 'galaxy70',
-        'HOST': 'social.mysql.pythonanywhere-services.com',
-        'PORT': '',
-
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
