@@ -11,7 +11,7 @@ from accounts.models import User
 class Post(models.Model):
     user = models.ForeignKey(User, related_name='posts')
     created_at = models.DateTimeField(auto_now=True)
-    message = models.TextField()
+    message = models.TextField(max_length=200)
     message_html = models.TextField(editable=False)
     group = models.ForeignKey(Group, related_name='posts', null=True, blank=True)
 
