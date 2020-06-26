@@ -21,7 +21,7 @@
             {% if user.is_authenticated %}
                 <li class="nav-item "><a class="nav-link text-white " href="{% url 'posts:create' %}">Post</a></li>
                 <li class="nav-item"><a class="nav-link text-white " href="{% url 'groups:all' %}">Groups</a></li>
-                <li class="nav-item"><a class="nav-link text-white " href="{% url 'groups:create' %}"></a>Create Group
+                <li class="nav-item"><a class="nav-link text-white " href="{% url 'groups:create' 1  %}"></a>Create Group
                 </li>
                 <li class="nav-item"><a class="nav-link text-white " href="{% url 'accounts:logout' %}">Log Out</a></li>
             {% else %}
