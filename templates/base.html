@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity=pyth"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
           crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{% static 'social/css/master.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/master.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/social/master.css' %}">
 
 </head>
 <body>
@@ -19,13 +20,16 @@
         <ul class="nav  justify-content-end nav-pills   ">
             <a class=" mynav navbar-brand text-white " href="{% url 'home' %}">Star Social</a>
             {% if user.is_authenticated %}
-                <li class="nav-item "><a class="nav-link text-white " href="{% url 'posts:create' %}">Post</a></li>
+                <li class="nav-item "><a class="nav-link text-white " href="{% url 'posts:all' %}"> Post</a></li>
                 <li class="nav-item"><a class="nav-link text-white " href="{% url 'groups:all' %}">Groups</a></li>
-                <li class="nav-item"><a class="nav-link text-white " href="{% url 'groups:create' 1  %}"></a>Create Group
+                <li class="nav-item "><a class="nav-link text-white " href="{% url 'posts:create' %}">Create Post</a>
+                </li>
+
+                <li class="nav-item"><a class="nav-link text-white " href="{% url 'groups:create' %}">Create Group</a>
                 </li>
                 <li class="nav-item"><a class="nav-link text-white " href="{% url 'accounts:logout' %}">Log Out</a></li>
             {% else %}
-                <li class="nav-item"><a class="nav-link text-white " href="{% url 'groups:all' %}">Groups</a></li>
+                {#                <li class="nav-item"><a class="nav-link text-white " href="{% url 'groups:all' %}">Groups</a></li>#}
                 <li class="nav-item"><a class="nav-link text-white " href="{% url 'accounts:login' %}">Log in</a></li>
                 <li class="nav-item"><a class="nav-link text-white " href="{% url 'accounts:signup' %}">Sign Up</a></li>
             {% endif %}
@@ -38,7 +42,9 @@
 
     {% endblock %}
 </div>
-<div><canvas style="z-index: -2"></canvas></div>
+<div>
+    <canvas></canvas>
+</div>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>

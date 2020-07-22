@@ -12,14 +12,17 @@ from django.db import IntegrityError
 class CreateGroup(LoginRequiredMixin, generic.CreateView):
     fields = ('name', 'description')
     model = Group
+    # template_name = 'groups/'
 
 
 class SingleGroup(generic.DetailView):
     model = Group
+    template_name = 'groups/group_detail.html'
 
 
 class ListGroups(generic.ListView):
     model = Group
+    template_name = 'groups/group_list.html'
 
 
 class JoinGroup(LoginRequiredMixin, generic.RedirectView):
