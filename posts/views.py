@@ -14,6 +14,7 @@ from django.contrib import messages
 class PostList(SelectRelatedMixin, generic.ListView):
     model = models.Post
     select_related = ('user', 'group')
+    template_name = 'posts/post_list.html'
 
 
 class UserPost(generic.ListView):
