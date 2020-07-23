@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'posts',
     # third apps
     'bootstrap4',
-    'bootstrap3'
+    # 'bootstrap3'
 ]
 
 MIDDLEWARE = [
