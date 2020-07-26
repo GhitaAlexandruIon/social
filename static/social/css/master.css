@@ -1,6 +1,30 @@
-body {
-  margin: 0;
-  overflow: hidden;
-  background-color: black;
-  color:white;
+body{
+  background-color: #242323;
+}
+#homepageBanner{
+  background-color: #0577f1;
+  margin-top: 10px;
+  width: 100%;
+}
+#textBanner{
+  color: whitesmoke;
+}
+#singUpForm{
+  width: 70%;
+}
+#logInForm{
+  width: 30%;
+}
+#createGroupForm{
+  width: 70%;
+}
+
+#logInForm, #singUpForm, #createGroupForm{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+#joinButton{
+  display: block;
+  float: right;
 }

@@ -2,13 +2,13 @@
 {% load bootstrap4 %}
 
 {% block content %}
-    <div>
-        <h1>Log In</h1>
-        <form method="POST">
-            {% csrf_token %}
-            {% bootstrap_form form %}
-            <input type="submit" class="btn btn-primary" value="Login">
-        </form>
-    </div>
 
+        <div class="jumbotron" id="logInForm">
+            <h1>Log In</h1>
+            <form method="POST">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                <input type="submit" class="btn btn-primary" value="Login">
+            </form>
+        </div>
 {% endblock %}

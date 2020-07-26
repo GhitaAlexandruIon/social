@@ -1,10 +1,14 @@
 {% extends "groups/groups_base.html" %}
 {% load bootstrap4 %}
 {% block group_content %}
-    <h4>Create a new goup!</h4>
+    <div id="createGroupForm" class="jumbotron">
+    <h4 class="text-center" style="margin-bottom: 20px">Create a new goup!</h4>
+    <div class="formcontrol">
     <form action="{% url 'groups:create' %}" method="POST" id="groupForm">
         {% csrf_token %}
         {% bootstrap_form form %}
         <input type="submit" class="btn btn-primary btn-large" value="Create">
     </form>
+    </div>
+    </div>
 {% endblock %}

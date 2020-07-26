@@ -14,30 +14,14 @@
 
 </head>
 <body>
-<nav class=" navbar navbar-expand-sm bg-primary  mynav " role="navigation" id="navbar">
-    <div class="container">
-        <ul class="nav  justify-content-end nav-pills   ">
-            <a class=" mynav navbar-brand text-white " href="{% url 'home' %}">Star Social</a>
-            {% if user.is_authenticated %}
-                <li class="nav-item "><a class="nav-link text-white " href="{% url 'posts:create' %}">Post</a></li>
-                <li class="nav-item"><a class="nav-link text-white " href="{% url 'groups:all' %}">Groups</a></li>
-                <li class="nav-item"><a class="nav-link text-white " href="{% url 'groups:create' %}">Create Group</a>
-                </li>
-                <li class="nav-item"><a class="nav-link text-white " href="{% url 'accounts:logout' %}">Log Out</a></li>
-            {% else %}
-                <li class="nav-item"><a class="nav-link text-white " href="{% url 'accounts:login' %}">Log in</a></li>
-                <li class="nav-item"><a class="nav-link text-white " href="{% url 'accounts:signup' %}">Sign Up</a></li>
-            {% endif %}
-        </ul>
-    </div>
-</nav>
-<div class="container mycontent">
+{% include 'navbar.html' %}
+<div class="mycontent">
     {% block content %}
 
 
     {% endblock %}
 </div>
-<div><canvas style="z-index: -2"></canvas></div>
+
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -47,7 +31,5 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
-<script src="{% static "social/js/master.js" %}" type="text/javascript"></script>
-
 </body>
 </html>

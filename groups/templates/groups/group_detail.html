@@ -1,14 +1,17 @@
 {% extends "groups/groups_base.html" %}
 {% block pregroup %}
+    <div class="jumbotron">
     <h1>{{ group.name }}</h1>
-    <h2>Menber Count: {{ group.members.count }}</h2>
-    <div class="content">
+    <h2>Member Count: {{ group.members.count }}</h2>
+
+    <div class="content container">
         {% if user in group.members.all %}
             <a href="{% url 'groups:leave' slug=group.slug %}" class="btn btn-warning">leave</a>
             </div>
         {% else %}
-            <a href="{% url 'groups:join' slug=group.slug %}" class="btn btn-primary">Join</a>
+            <a href="{% url 'groups:join' slug=group.slug %}" class="btn btn-primary" id="joinButton">Join</a>
         {% endif %}
+    </div>
 {% endblock %}
 {% block group_content %}
     <div class="col-md-8">
